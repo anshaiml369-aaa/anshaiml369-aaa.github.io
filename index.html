@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ansh Agrawal · Projects</title>
+<meta name="description" content="Ansh Agrawal, B.Tech AI & ML student. Projects in Python, generative AI and web apps.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%234f46e5'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='28' fill='white' text-anchor='middle'>AA</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f7fb; --card:#ffffff; --ink:#151827; --ink-2:#4b5065; --ink-3:#7a7f95; --line:#e6e7ef;
+  --accent:#4f46e5; --accent-2:#7c3aed; --accent-soft:#eef0ff; --shadow:0 10px 30px -12px rgba(30,32,60,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(247,247,251,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:-.02em;text-decoration:none;font-size:18px}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:22px}
+.links a{text-decoration:none;color:var(--ink-2);font-weight:500;font-size:15px}
+.links a:hover{color:var(--accent)}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.tag{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:13px;padding:6px 12px;border-radius:999px}
+.tag i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.2)}
+h1{font-size:clamp(38px,6vw,60px);line-height:1.08;letter-spacing:-.035em;margin:18px 0 16px;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--ink-2);max-width:560px;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;font-weight:600;text-decoration:none;font-size:15px;transition:transform .15s,box-shadow .15s}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.ghost{background:var(--card);border:1px solid var(--line)}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.photo{justify-self:center;position:relative;width:min(300px,70vw);aspect-ratio:1}
+.photo::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(from 200deg,#4f46e5,#7c3aed,#06b6d4,#4f46e5);opacity:.18;filter:blur(18px)}
+.photo img{position:relative;width:100%;height:100%;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:var(--shadow)}
+
+/* sections */
+section{padding:56px 0}
+.kicker{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+h2{font-size:clamp(28px,4vw,38px);letter-spacing:-.025em;margin:6px 0 10px;line-height:1.15}
+.sub{color:var(--ink-2);margin:0 0 32px;max-width:620px}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.thumb{aspect-ratio:16/10;background:#11131a;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+.thumb.contain{background:linear-gradient(135deg,#1b1e29,#272b3a)}
+.thumb.contain img{width:auto;height:88%;object-fit:contain;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+.body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.body h3{margin:0 0 6px;font-size:20px;letter-spacing:-.015em}
+.body p{margin:0 0 14px;color:var(--ink-2);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.chips span{font-size:12.5px;font-weight:600;color:var(--ink-2);background:#f1f2f7;border-radius:8px;padding:4px 9px}
+.card .more{margin-top:auto;display:flex;gap:16px}
+.card .more a{font-weight:600;font-size:14.5px;color:var(--accent);text-decoration:none}
+.card .more a:hover{text-decoration:underline}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.skill h4{margin:0 0 10px;font-size:15px}
+.skill ul{list-style:none;margin:0;padding:0;color:var(--ink-2);font-size:15px}
+.skill li{padding:3px 0}
+
+/* about + contact */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.about p{color:var(--ink-2);margin:0 0 12px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.box dl{margin:0;display:grid;grid-template-columns:120px 1fr;gap:10px 14px;font-size:15px}
+.box dt{color:var(--ink-3)} .box dd{margin:0;font-weight:600}
+.contact{text-align:center;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border-radius:24px;padding:48px 24px;margin:12px 0 56px}
+.contact h2{color:#fff} .contact p{color:rgba(255,255,255,.85);margin:0 0 22px}
+.contact .btn{background:#fff;color:var(--ink)}
+footer{color:var(--ink-3);font-size:14px;text-align:center;padding:0 0 40px}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;text-align:left}
+  .photo{order:-1;width:180px;justify-self:start}
+  .grid,.about{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr 1fr}
+  .links{gap:14px}
+}
+@media (max-width:520px){ .skills{grid-template-columns:1fr} .links a:nth-child(3){display:none} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#">Ansh<span>.</span></a>
+  <div class="links"><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="tag"><i></i>B.Tech AI &amp; ML student</span>
+    <h1>Hi, I'm Ansh.<br>I build <em>things with Python</em> and AI.</h1>
+    <p class="lead">B.Tech student in Artificial Intelligence &amp; Machine Learning. I learn by building small,
+      working projects: desktop apps, chatbots, and web apps that connect to AI APIs.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects →</a>
+      <a class="btn ghost" href="https://github.com/anshaiml369-aaa" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <div class="photo"><img src="assets/photo.jpg" alt="Photo of Ansh Agrawal" width="480" height="480"></div>
+</div></header>
+
+<section id="projects"><div class="wrap">
+  <div class="kicker">Projects</div>
+  <h2>Things I've built</h2>
+  <p class="sub">Each one taught me something new. All the code is on GitHub.</p>
+
+  <div class="grid">
+    <article class="card">
+      <div class="thumb"><img src="assets/genai-studio.jpg" alt="Kalpana GenAI Studio home page" loading="lazy"></div>
+      <div class="body">
+        <h3>Kalpana · GenAI Studio</h3>
+        <p>One web app for chat, voice, images and video. A Python back end connects several AI APIs, and I built
+          the front end by hand in HTML, CSS and JavaScript.</p>
+        <div class="chips"><span>Python</span><span>FastAPI</span><span>JavaScript</span><span>OpenAI</span><span>Gemini</span></div>
+        <div class="more"><a href="https://github.com/anshaiml369-aaa/genai-studio" target="_blank" rel="noopener">View code →</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb"><img src="assets/assistant.jpg" alt="Multimodal AI Assistant chat screen" loading="lazy"></div>
+      <div class="body">
+        <h3>Tool-calling AI Assistant</h3>
+        <p>A ChatGPT-style assistant you can type or talk to. It understands photos, speaks its replies, and uses
+          tool calling to decide by itself when to create an image or a video.</p>
+        <div class="chips"><span>Python</span><span>Streamlit</span><span>Tool calling</span><span>Speech</span></div>
+        <div class="more"><a href="https://github.com/anshaiml369-aaa/multimodal-ai-assistant" target="_blank" rel="noopener">View code →</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb"><img src="assets/amr.jpg" alt="Smart warehouse robot fleet dashboard" loading="lazy"></div>
+      <div class="body">
+        <h3>Smart Warehouse Robots (AMR)</h3>
+        <p>Our Smart India Hackathon project: a simulated warehouse where a fleet of robots picks up and delivers
+          items, avoids collisions and goes to charge, with a live dashboard and a 3D view.</p>
+        <div class="chips"><span>Python</span><span>Simulation</span><span>Three.js</span><span>Hackathon</span></div>
+        <div class="more"><a href="https://github.com/anshaiml369-aaa/AMR_WAREHOUSE_SIH" target="_blank" rel="noopener">View code →</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="thumb contain"><img src="assets/calculator.jpg" alt="GUI calculator window" loading="lazy"></div>
+      <div class="body">
+        <h3>GUI Calculator</h3>
+        <p>My first desktop app. I turned a command-line calculator from my Python course into a dark-themed
+          window with buttons, keyboard shortcuts and proper error handling.</p>
+        <div class="chips"><span>Python</span><span>Tkinter</span><span>Unit tests</span></div>
+        <div class="more"><a href="https://github.com/anshaiml369-aaa/gui-calculator" target="_blank" rel="noopener">View code →</a></div>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="kicker">Skills</div>
+  <h2>What I work with</h2>
+  <p class="sub">Still learning every week. These are the tools I've used in my projects.</p>
+  <div class="skills">
+    <div class="skill"><h4>Languages</h4><ul><li>Python</li><li>JavaScript</li><li>HTML &amp; CSS</li></ul></div>
+    <div class="skill"><h4>Frameworks</h4><ul><li>FastAPI</li><li>Streamlit</li><li>Tkinter</li></ul></div>
+    <div class="skill"><h4>AI APIs</h4><ul><li>OpenAI (chat, vision, voice)</li><li>Gemini</li><li>Groq Whisper</li></ul></div>
+    <div class="skill"><h4>Tools</h4><ul><li>Git &amp; GitHub</li><li>VS Code</li><li>FFmpeg</li></ul></div>
+    <div class="skill"><h4>Basics</h4><ul><li>Data structures</li><li>Machine learning basics</li><li>Unit testing</li></ul></div>
+    <div class="skill"><h4>Learning now</h4><ul><li>Building better UIs</li><li>Working with AI agents</li><li>Deploying apps</li></ul></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="kicker">About</div>
+  <h2>A little about me</h2>
+  <div class="about">
+    <div>
+      <p>I'm a second-year B.Tech student in AI &amp; ML. I got into programming through Python, and I enjoy the moment
+        a project finally works on screen.</p>
+      <p>Most of what I know I learned by building: following a course or tutorial, then changing it, breaking it and
+        adding my own features until it feels like mine.</p>
+    </div>
+    <div class="box">
+      <dl>
+        <dt>Studying</dt><dd>B.Tech, AI &amp; Machine Learning</dd>
+        <dt>Year</dt><dd>Second year</dd>
+        <dt>Based in</dt><dd>India</dd>
+        <dt>Into</dt><dd>Python, AI apps, UI design</dd>
+      </dl>
+    </div>
+  </div>
+</div></section>
+
+<div class="wrap" id="contact">
+  <div class="contact">
+    <h2>Want to build something together?</h2>
+    <p>I'm always up for a project or a hackathon team. Find me on GitHub.</p>
+    <a class="btn" href="https://github.com/anshaiml369-aaa" target="_blank" rel="noopener">github.com/anshaiml369-aaa</a>
+  </div>
+</div>
+
+<footer>© 2026 Ansh Agrawal · Made with HTML &amp; CSS</footer>
+</body>
+</html>
